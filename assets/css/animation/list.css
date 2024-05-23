@@ -1,0 +1,50 @@
+ul {
+    list-style-type: none;
+}
+
+#list {
+    counter-reset: li;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2em;
+}
+
+#list li {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2.5em;
+    /* Aumenté el padding izquierdo para dejar espacio al número */
+    margin: 0.5em 0;
+    background: #b9ea6c;
+    color: #192c07;
+    text-decoration: none;
+    border-radius: 0.3em;
+    transition: all 0.3s ease-out;
+}
+
+#list li:hover {
+    background: #eaf9ce;
+}
+
+#list li:hover:before {
+    transform: rotate(360deg);
+}
+
+#list li:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: 0.5em;
+    /* Ajusté la posición del número */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centré verticalmente el número */
+    background: #609b15;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all 0.3s ease-out;
+}
